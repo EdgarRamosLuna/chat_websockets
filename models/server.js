@@ -13,7 +13,16 @@ class Server{
         this.port = process.env.PORT;
 
         this.server = http.createServer(this.app);
-        this.io = socketio(this.server, { /*Configs */});
+        this.io = socketio(this.server, { 
+
+            cors: {
+            
+                methods: ["GET", "POST"],
+                allowedHeaders: ["my-custom-header"],
+                credentials: true
+            }
+
+        });
         // Configuracion del socket server
         //Https server
 
