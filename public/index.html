@@ -8,31 +8,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 <body class="container">
-    <h1 class="mt-5">Mini Chat</h1>
+    <h1 class="mt-5">Acceso denegado</h1>
     <hr>
-    <form action="" id="myForm">
-        <div class="row">
-            <div class="col-8">
-                <input type="text" id="txtMsg" placeholder="Mensaje" class="form-control">
-            </div>
-            <div class="col-4">
-                <button class="btn btn-primary" type="submit">Enviar</button>
-            </div>
-        </div>
-
-    </form>
-    <div class="row">
-        <div class="col">
-            <ul id="myMsg" class="mt-2">
-                
-            </ul>
-        </div>
-    </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.3/socket.io.js" integrity="sha512-iWPnCISAd/J+ZacwV2mbNLCaPGRrRo5OS81lKTVPtRg1wGTC20Cfmp5Us5RcbLv42QLdbAWl0MI57yox5VecQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         const socket = io('https://c-wt.herokuapp.com/');
-        const formulario = document.querySelector("#myForm");
+/*        const formulario = document.querySelector("#myForm");
         const msgs = document.querySelector("#myMsg");
         const txtMsg = document.querySelector("#txtMsg");
 
@@ -43,10 +26,10 @@
             const nuevoMensaje = txtMsg.value;
             socket.emit('msg-to-server', {msg: nuevoMensaje});
             //console.log(nuevoMensaje);
-        });
+        });*/
         socket.on('msg-from-server', (data) =>{
             //console.log(data);
-            msgs.innerHTML += `<li>${data.msg}</li>`;
+          //  msgs.innerHTML += `<li>${data.msg}</li>`;
         });
      /*   socket.on('mensaje-bienvenida', (data) =>{
             //console.log("el servidor emitio algo");
